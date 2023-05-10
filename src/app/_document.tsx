@@ -1,14 +1,16 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-// Import styled components ServerStyleSheet
+
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
-  static getInitialProps({ renderPage }) {
+  static getInitialProps(ctx) {
     // Step 1: Create an instance of ServerStyleSheet
     const sheet = new ServerStyleSheet();
 
+    const originalRenderPage = ctx.renderPage;
+
     // Step 2: Retrieve styles from components in the page
-    const page = renderPage((App) => (props) =>
+    const page = originalRenderPage((App) => (props) =>
       sheet.collectStyles(<App {...props} />),
     );
 
@@ -23,7 +25,7 @@ export default class MyDocument extends Document {
     return (
       <html>
       <Head>
-        <title>My page</title>
+        <title>UGMK</title>
         {/* Step 5: Output the styles in the head  */}
         {this.props.styleTags}
       </Head>

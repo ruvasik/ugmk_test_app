@@ -1,5 +1,5 @@
 {
-  "name": "ugmk",
+  "name": "ugmk_test_app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,6 +21,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@swc/core": "^1.3.56",
+    "@swc/plugin-styled-components": "^1.5.61",
     "babel-plugin-styled-components": "^2.1.1"
   }
 }
